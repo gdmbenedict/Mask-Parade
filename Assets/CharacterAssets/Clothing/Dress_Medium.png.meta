@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 4a4aae72ea9e8f247bc7b039a8757a92
+guid: 726fc0affe54d3a4f8891f85a7a16549
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4102380210578549713
-    second: Body_Small_0
+      213: -6364246209793878698
+    second: Dress_Small_0
+  - first:
+      213: -5135576137433287820
+    second: Dress_Small_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +99,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Body_Small_0
+      name: Dress_Small_0
       rect:
         serializedVersion: 2
-        x: 285
-        y: 0
-        width: 990
-        height: 1658
+        x: 596
+        y: 1005
+        width: 368
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f249fde0fea6117c0800000000000000
-      internalID: -4102380210578549713
+      spriteID: 6551c1a9ac7ada7a0800000000000000
+      internalID: -6364246209793878698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dress_Small_1
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 0
+        width: 1350
+        height: 913
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473f05366b4cab8b0800000000000000
+      internalID: -5135576137433287820
       vertices: []
       indices: 
       edges: []
@@ -135,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Body_Small_0: -4102380210578549713
+      Dress_Small_0: -6364246209793878698
+      Dress_Small_1: -5135576137433287820
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

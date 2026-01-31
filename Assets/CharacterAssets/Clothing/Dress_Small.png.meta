@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 726fc0affe54d3a4f8891f85a7a16549
+guid: 408781dfe13b3494186398d2d5a3d108
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -99,19 +99,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -119,10 +106,10 @@ TextureImporter:
       name: Dress_Small_0
       rect:
         serializedVersion: 2
-        x: 596
-        y: 1005
-        width: 368
-        height: 117
+        x: 635
+        y: 978
+        width: 290
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +128,10 @@ TextureImporter:
       name: Dress_Small_1
       rect:
         serializedVersion: 2
-        x: 106
+        x: 167
         y: 0
-        width: 1350
-        height: 913
+        width: 1226
+        height: 830
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

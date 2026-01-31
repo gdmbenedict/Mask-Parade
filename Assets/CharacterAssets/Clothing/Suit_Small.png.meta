@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2de90ef0190c7544db105d3d47566476
+guid: ee410761796ae94409da0c5d95d43e62
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -96,19 +96,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -116,10 +103,10 @@ TextureImporter:
       name: Suit_Small_0
       rect:
         serializedVersion: 2
-        x: 183
+        x: 288
         y: 0
-        width: 1201
-        height: 1115
+        width: 984
+        height: 1052
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
