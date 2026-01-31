@@ -30,6 +30,7 @@ public class Button : MonoBehaviour
                 uIManager.systemManager.QuitGame();
                 break;
             case ButtonType.options:
+                uIManager.OptionsMenu();
                 break;
             case ButtonType.backToMenu:
                 uIManager.HowToBackToMenu();
