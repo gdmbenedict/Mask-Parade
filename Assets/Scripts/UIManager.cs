@@ -75,7 +75,8 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void HowToBackToMenu()
     {
-        ResetMenu(); 
+        ResetMenu();
+        SetPresitantVolume(); 
     }
 
     public void StartGame()
@@ -92,6 +93,7 @@ public class UIManager : MonoBehaviour
     }
     public void OptionsMenu()
     {
+        GetStartingVolume();
         menuUI.SetActive(false);
         optionsUI.SetActive(true);
     }
@@ -174,21 +176,18 @@ public class UIManager : MonoBehaviour
     }
     #endregion
     #region OptionsMenu
-     public void GetStartingVolume()
+    public void GetStartingVolume()
     {
-        if(audioManager.mixer.GetFloat("MasterVol",out float masterValue))
-        {
-            masterVolSlider.value = masterValue;
-        }
-        if(audioManager.mixer.GetFloat("MusicVol",out float musicValue))
-        {
-            musicVolSlider.value = musicValue;
-        }
-        if(audioManager.mixer.GetFloat("SFXVol", out float sfxValue))
-        {
-            sFXVolSlider.value = sfxValue;
-        }
+
+        masterVolSlider.value = audioManager.volume.MasterVol;
+        musicVolSlider.value = audioManager.volume.MusicVol;
+        sFXVolSlider.value = audioManager.volume.SFXVol;
     }
-    
+    public void SetPresitantVolume()
+    {
+        audioManager.UpdateVoluem(masterVolSlider.value,"Master");
+        audioManager.UpdateVoluem(musicVolSlider.value,"Music");
+        audioManager.UpdateVoluem(sFXVolSlider.value,"SFX");
+    }
     #endregion
 }

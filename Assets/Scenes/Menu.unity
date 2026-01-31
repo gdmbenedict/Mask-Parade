@@ -1013,7 +1013,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -362, y: -228}
+  m_AnchoredPosition: {x: 0, y: -228}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &372212379
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: -60
   m_MaxValue: 10
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1092,6 +1092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
   audioManager: {fileID: 0}
+  uIManager: {fileID: 0}
   group: Music
   slider: {fileID: 372212379}
 --- !u!1 &417518563
@@ -1806,7 +1807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10aa08dd4cde8d04881d746323320024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  systemManager: {fileID: 0}
+  systemManager: {fileID: 9715766}
+  volume: {fileID: 11400000, guid: 2b33423e510e17d4fabe1aa5c75adb5b, type: 2}
   mixer: {fileID: 24100000, guid: d2f3ff7b2f626e248adf12715dbca3d8, type: 2}
   musicSource: {fileID: 1220228386}
   musicList: []
@@ -2200,7 +2202,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -362, y: 182}
+  m_AnchoredPosition: {x: 0, y: 182}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1013373087
@@ -2249,7 +2251,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: -60
   m_MaxValue: 10
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2279,6 +2281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
   audioManager: {fileID: 0}
+  uIManager: {fileID: 0}
   group: Master
   slider: {fileID: 1013373087}
 --- !u!1 &1070696899
@@ -3047,7 +3050,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -362, y: -17}
+  m_AnchoredPosition: {x: 0, y: -17}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1602063579
@@ -3096,7 +3099,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: -60
   m_MaxValue: 10
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3126,6 +3129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
   audioManager: {fileID: 0}
+  uIManager: {fileID: 0}
   group: SFX
   slider: {fileID: 1602063579}
 --- !u!1 &1662951925

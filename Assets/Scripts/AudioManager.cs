@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
 
 public class AudioManager : MonoBehaviour
 {
     [Header("Manager Referances")]
     public SystemManager systemManager;
+    public Volume volume;
     [Header("Mixer")]
     public AudioMixer mixer;
     [Header("Music")]
@@ -40,6 +42,11 @@ public class AudioManager : MonoBehaviour
     public void ChangeVolume(string group, float value)
     {
         mixer.SetFloat(group,value);
+    }
+
+    public void UpdateVoluem(float value, string group)
+    {
+        volume.UpdateVoluem(value,group);
     }
     #endregion
 }
