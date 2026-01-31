@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1fe99e412f3b5f64ba637896c719d2c5
+guid: 5e50dfa91ddb44f47b894cbde1ace1c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6846295634184802928
-    second: Hand_SmallSuit_0
+      213: -6870563936329250185
+    second: Hand_mediumSuit_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hand_SmallSuit_0
+      name: Hand_mediumSuit_0
       rect:
         serializedVersion: 2
         x: 810
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 07294e62b9de20f50800000000000000
-      internalID: 6846295634184802928
+      spriteID: 77a4c70708ad6a0a0800000000000000
+      internalID: -6870563936329250185
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hand_SmallSuit_0: 6846295634184802928
+      Hand_mediumSuit_0: -6870563936329250185
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
