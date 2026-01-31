@@ -87,6 +87,39 @@ public class GuestManager : MonoBehaviour
         return colorName;
     }
 
+    private string GetClothesColorName(Guest.MaskColor color)
+    {
+        string colorName;
+        switch (color)
+        {
+            case Guest.MaskColor.white:
+                colorName = "white";
+                break;
+
+            case Guest.MaskColor.black:
+                colorName = "black";
+                break;
+
+            case Guest.MaskColor.red:
+                colorName = "red";
+                break;
+
+            case Guest.MaskColor.blue:
+                colorName = "blue";
+                break;
+
+            case Guest.MaskColor.yellow:
+                colorName = "yellow";
+                break;
+
+            default:
+                colorName = "white";
+                break;
+        }
+
+        return colorName;
+    }
+
     private void SetSkinColor()
     {
         string colorName;

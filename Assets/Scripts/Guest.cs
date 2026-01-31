@@ -6,7 +6,7 @@ public class Guest
 {
     [Header("Checked Attributes")]
     public MaskShape maskShape;
-    public ClothesColor maskColor;
+    public MaskColor maskColor;
     public ClothesType clothesType;
     public ClothesColor clothesColor;
     public HairStyle hairStyle;
@@ -21,7 +21,7 @@ public class Guest
     public void GenerateGuest()
     {
         maskShape = GetRandomEnumValue<MaskShape>();
-        maskColor = GetRandomEnumValue<ClothesColor>();
+        maskColor = GetRandomEnumValue<MaskColor>();
         clothesType = GetRandomEnumValue<ClothesType>();
         clothesColor = GetRandomEnumValue<ClothesColor>();
         hairStyle = GetRandomEnumValue<HairStyle>();
@@ -55,6 +55,16 @@ public class Guest
 
     [System.Serializable]
     public enum ClothesColor
+    {
+        black,
+        white,
+        yellow,
+        red,
+        blue
+    }
+
+    [System.Serializable]
+    public enum MaskColor
     {
         black,
         white,
