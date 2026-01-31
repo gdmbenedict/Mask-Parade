@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 000a05d31e5c77c45a44fc69080322a6
+guid: 39d180556c575e24e98fb29d88c99226
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2272196918169929606
-    second: Hand_BigSuit_0
+      213: 1571915569298721515
+    second: Hair_Braid_0
+  - first:
+      213: -8401891964149572047
+    second: Hair_Braid_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hand_BigSuit_0
+      name: Hair_Braid_0
       rect:
         serializedVersion: 2
-        x: 787
-        y: 0
-        width: 634
-        height: 928
+        x: 468
+        y: 1325
+        width: 602
+        height: 472
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6878147fe07788f10800000000000000
-      internalID: 2272196918169929606
+      spriteID: beac4f4c1e090d510800000000000000
+      internalID: 1571915569298721515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Braid_1
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 577
+        width: 253
+        height: 686
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ed7a316cb766b80800000000000000
+      internalID: -8401891964149572047
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hand_BigSuit_0: 2272196918169929606
+      Hair_Braid_0: 1571915569298721515
+      Hair_Braid_1: -8401891964149572047
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

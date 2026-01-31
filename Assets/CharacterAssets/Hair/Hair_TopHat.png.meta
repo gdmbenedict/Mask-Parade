@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1fe99e412f3b5f64ba637896c719d2c5
+guid: 1c371de5fd275be409c72401eb49c6da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6846295634184802928
-    second: Hand_SmallSuit_0
+      213: 6174068252061504623
+    second: Hair_TopHat_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hand_SmallSuit_0
+      name: Hair_TopHat_0
       rect:
         serializedVersion: 2
-        x: 810
-        y: 0
-        width: 488
-        height: 879
+        x: 442
+        y: 1324
+        width: 676
+        height: 694
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 07294e62b9de20f50800000000000000
-      internalID: 6846295634184802928
+      spriteID: f6494271d52bea550800000000000000
+      internalID: 6174068252061504623
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hand_SmallSuit_0: 6846295634184802928
+      Hair_TopHat_0: 6174068252061504623
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

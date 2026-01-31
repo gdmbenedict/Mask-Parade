@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 000a05d31e5c77c45a44fc69080322a6
+guid: 7526575e2d9c0284da07b887efe809f0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2272196918169929606
-    second: Hand_BigSuit_0
+      213: -5384989398818294470
+    second: Mask_Fish_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hand_BigSuit_0
+      name: Mask_Fish_0
       rect:
         serializedVersion: 2
-        x: 787
-        y: 0
-        width: 634
-        height: 928
+        x: 384
+        y: 625
+        width: 792
+        height: 1030
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6878147fe07788f10800000000000000
-      internalID: 2272196918169929606
+      spriteID: a35f0343caca445b0800000000000000
+      internalID: -5384989398818294470
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hand_BigSuit_0: 2272196918169929606
+      Mask_Fish_0: -5384989398818294470
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
