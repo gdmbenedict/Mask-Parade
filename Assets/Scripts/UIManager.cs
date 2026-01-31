@@ -1,8 +1,10 @@
 using UnityEngine;
-using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using System.Linq;
+using DG.Tweening;
+using System.Data.Common;
 
 public class UIManager : MonoBehaviour
 {
