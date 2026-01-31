@@ -65,7 +65,7 @@ public class SystemManager : MonoBehaviour
 
     public void MainMenu()
     {
-        
+        uIManager.ResetMenu();
     }
 
     public void Gameplay()

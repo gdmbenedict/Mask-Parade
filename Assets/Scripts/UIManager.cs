@@ -68,14 +68,19 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void HowToBackToMenu()
     {
-        menuUI.SetActive(true);
-        howToUI.SetActive(false); 
+        ResetMenu(); 
     }
 
     public void StartGame()
     {
         systemManager.LoadScene("Gameplay");
         systemManager.ChangeGameState(SystemManager.GameState.Gameplay);
+    }
+
+    public void ResetMenu()
+    {
+        menuUI.SetActive(true);
+        howToUI.SetActive(false); 
     }
     #endregion
     #region Loading Screen
