@@ -96,6 +96,7 @@ public class SystemManager : MonoBehaviour
     /// <param name="sceneName"></param>
     public void LoadScene(string sceneName)
     {
+        uIManager.UILoadingScreen();
         StartCoroutine(WaitForScreenLoad(sceneName));   
     }
 
