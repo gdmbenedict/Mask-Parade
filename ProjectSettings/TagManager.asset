@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MenuPanel
   - HowToPanel
+  - OptionsPanel
   layers:
   - Default
   - TransparentFX

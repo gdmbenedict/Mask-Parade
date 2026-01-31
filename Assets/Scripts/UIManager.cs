@@ -16,29 +16,28 @@ public class UIManager : MonoBehaviour
     [Header("UI Elements")]
     public GameObject menuUI;
     public GameObject howToUI;
+    public GameObject optionsUI;
     [Header("Loading Screen UI Elements")]
     public GameObject loadingScreen;
     public CanvasGroup loadingScreenCanvasGroup;
     public Image loadingBar;
     public float fadeTime;
+    [Header("Options Menu UI Elements")]
+    public Slider masterVolSlider;
+    public Slider musicVolSlider;
+    public Slider sFXVolSlider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     #region Unity Core
     void Awake()
     {
         FetchUIElements();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     #endregion
     #region UI Control
     /// <summary>
     /// grabs UI elemnts in case they are nulled (like when loading back to menu from gameplay)
     /// </summary>
-    void FetchUIElements()
+    public void FetchUIElements()
     {
         if(menuUI == null)
         {
@@ -50,6 +49,14 @@ public class UIManager : MonoBehaviour
             if(systemManager.gameState == SystemManager.GameState.MainMenu)
             {
                 howToUI.SetActive(false);
+            }
+        }
+        if(optionsUI == null)
+        {
+            optionsUI = GameObject.FindWithTag("OptionsPanel");
+            if(systemManager.gameState == SystemManager.GameState.MainMenu)
+            {
+                optionsUI.SetActive(false);
             }
         }
     }
@@ -68,14 +75,27 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void HowToBackToMenu()
     {
-        menuUI.SetActive(true);
-        howToUI.SetActive(false); 
+        ResetMenu();
+        SetPresitantVolume(); 
     }
 
     public void StartGame()
     {
         systemManager.LoadScene("Gameplay");
         systemManager.ChangeGameState(SystemManager.GameState.Gameplay);
+    }
+
+    public void ResetMenu()
+    {
+        menuUI.SetActive(true);
+        howToUI.SetActive(false); 
+        optionsUI.SetActive(false);
+    }
+    public void OptionsMenu()
+    {
+        GetStartingVolume();
+        menuUI.SetActive(false);
+        optionsUI.SetActive(true);
     }
     #endregion
     #region Loading Screen
@@ -153,6 +173,20 @@ public class UIManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         //Debug.Log("Ending Progress Bar");
         StartCoroutine(LoadingUIFadeOut());
+    }
+    #endregion
+    #region OptionsMenu
+    public void GetStartingVolume()
+    {
+        masterVolSlider.value = audioManager.GetStartingVol("Master");
+        musicVolSlider.value = audioManager.GetStartingVol("Music");
+        sFXVolSlider.value = audioManager.GetStartingVol("SFX");
+    }
+    public void SetPresitantVolume()
+    {
+        audioManager.UpdateVoluem(masterVolSlider.value,"Master");
+        audioManager.UpdateVoluem(musicVolSlider.value,"Music");
+        audioManager.UpdateVoluem(sFXVolSlider.value,"SFX");
     }
     #endregion
 }
