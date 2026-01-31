@@ -7,6 +7,9 @@ TagManager:
   - MenuPanel
   - HowToPanel
   - OptionsPanel
+  - MasterVolSlider
+  - MusicVolSlider
+  - SFXVolSlider
   layers:
   - Default
   - TransparentFX

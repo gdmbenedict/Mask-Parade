@@ -28,9 +28,10 @@ public class UIManager : MonoBehaviour
     public Slider sFXVolSlider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     #region Unity Core
-    void Awake()
+    void Start()
     {
         FetchUIElements();
+        GetStartingVolume();
     }
     #endregion
     #region UI Control
@@ -39,25 +40,28 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void FetchUIElements()
     {
-        if(menuUI == null)
+        if(systemManager.gameState == SystemManager.GameState.MainMenu)
         {
-            menuUI = GameObject.FindWithTag("MenuPanel");
-        }
-        if(howToUI == null)
-        {
-            howToUI = GameObject.FindWithTag("HowToPanel");
-            if(systemManager.gameState == SystemManager.GameState.MainMenu)
+            if(menuUI == null)
             {
-                howToUI.SetActive(false);
+                menuUI = GameObject.FindWithTag("MenuPanel");
             }
-        }
-        if(optionsUI == null)
-        {
-            optionsUI = GameObject.FindWithTag("OptionsPanel");
-            if(systemManager.gameState == SystemManager.GameState.MainMenu)
+            if(howToUI == null)
             {
-                optionsUI.SetActive(false);
+                howToUI = GameObject.FindWithTag("HowToPanel");
+                if(systemManager.gameState == SystemManager.GameState.MainMenu)
+                {
+                    howToUI.SetActive(false);
+                }
             }
+            if(optionsUI == null)
+            {
+                optionsUI = GameObject.FindWithTag("OptionsPanel");
+                if(systemManager.gameState == SystemManager.GameState.MainMenu)
+                {
+                    optionsUI.SetActive(false);
+                }
+            }  
         }
     }
 
@@ -178,15 +182,15 @@ public class UIManager : MonoBehaviour
     #region OptionsMenu
     public void GetStartingVolume()
     {
-        masterVolSlider.value = audioManager.GetStartingVol("Master");
-        musicVolSlider.value = audioManager.GetStartingVol("Music");
-        sFXVolSlider.value = audioManager.GetStartingVol("SFX");
+        masterVolSlider.value = audioManager.GetStartingVol("MasterVol");
+        musicVolSlider.value = audioManager.GetStartingVol("MusicVol");
+        sFXVolSlider.value = audioManager.GetStartingVol("SFXVol");
     }
     public void SetPresitantVolume()
     {
-        audioManager.UpdateVoluem(masterVolSlider.value,"Master");
-        audioManager.UpdateVoluem(musicVolSlider.value,"Music");
-        audioManager.UpdateVoluem(sFXVolSlider.value,"SFX");
+        audioManager.UpdateVoluem(masterVolSlider.value,"MasterVol");
+        audioManager.UpdateVoluem(musicVolSlider.value,"MusicVol");
+        audioManager.UpdateVoluem(sFXVolSlider.value,"SFXVol");
     }
     #endregion
 }

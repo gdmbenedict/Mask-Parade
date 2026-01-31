@@ -4,23 +4,23 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Volume", menuName = "Scriptable Objects/Volume")]
 public class Volume : ScriptableObject
 {
-    [Range(-60,10)]
+    [Range(-50,0)]
     public float MasterVol;
-    [Range(-60,10)]
+    [Range(-50,0)]
     public float MusicVol;
-    [Range(-60,10)]
+    [Range(-50,0)]
     public float SFXVol;
     public void UpdateVoluem(float value, string group)
     {
         switch (group)
         {
-            case "Master":
+            case "MasterVol":
                 MasterVol = value;
                 break;
-            case "Music":
+            case "MusicVol":
                 MusicVol = value;
                 break;
-            case "SFX":
+            case "SFXVol":
                 SFXVol = value;
                 break;
         }

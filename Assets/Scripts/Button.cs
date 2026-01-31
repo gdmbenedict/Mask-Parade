@@ -5,6 +5,7 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     public UIManager uIManager;
+    public AudioManager audioManager;
     public enum ButtonType{play,start,quit,options,backToMenu}
     public ButtonType type;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -13,6 +14,10 @@ public class Button : MonoBehaviour
         if(uIManager == null)
         {
             uIManager = GameObject.FindAnyObjectByType<UIManager>();
+        }
+        if(audioManager == null)
+        {
+            audioManager = GameObject.FindAnyObjectByType<AudioManager>();
         }
     }
 
@@ -36,5 +41,6 @@ public class Button : MonoBehaviour
                 uIManager.HowToBackToMenu();
                 break;
         }
+        audioManager.PlaySFX(1);
     }
 }

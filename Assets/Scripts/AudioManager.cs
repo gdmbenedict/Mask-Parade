@@ -53,13 +53,13 @@ public class AudioManager : MonoBehaviour
         float value = 0;
         switch(group)
         {
-            case "Master":
+            case "MasterVol":
                 value = volume.MasterVol;
                 break;
-            case "Music":
+            case "MusicVol":
                 value = volume.MusicVol;
                 break;
-            case "SFX":
+            case "SFXVol":
                 value = volume.SFXVol;
                 break;
         }

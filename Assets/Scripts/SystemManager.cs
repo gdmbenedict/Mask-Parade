@@ -51,8 +51,10 @@ public class SystemManager : MonoBehaviour
         switch(gameState)
         {
             case GameState.MainMenu:
+                MainMenu();
                 break;
             case GameState.Gameplay:
+                Gameplay();
                 break;
             case GameState.Paused:
                 break;
@@ -65,11 +67,12 @@ public class SystemManager : MonoBehaviour
     {
         uIManager.FetchUIElements();
         uIManager.ResetMenu();
+        audioManager.PlayMusic(0);
     }
 
     public void Gameplay()
     {
-        
+        audioManager.PlayMusic(1);
     }
 
     public void Paused()

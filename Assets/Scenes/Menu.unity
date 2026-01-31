@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 372212380}
   m_Layer: 5
   m_Name: BGMVolSlider
-  m_TagString: Untagged
+  m_TagString: MusicVolSlider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1079,8 +1079,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 965146816}
   m_HandleRect: {fileID: 2035848453}
   m_Direction: 0
-  m_MinValue: -60
-  m_MaxValue: 10
+  m_MinValue: -50
+  m_MaxValue: 0
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -1110,9 +1110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5573a349183c6499bf193b048ed99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
-  audioManager: {fileID: 0}
-  uIManager: {fileID: 0}
-  group: Music
+  audioManager: {fileID: 950938728}
+  uIManager: {fileID: 208517143}
+  group: MusicVol
   slider: {fileID: 372212379}
 --- !u!1 &417518563
 GameObject:
@@ -1905,9 +1905,17 @@ MonoBehaviour:
   volume: {fileID: 11400000, guid: 2b33423e510e17d4fabe1aa5c75adb5b, type: 2}
   mixer: {fileID: 24100000, guid: d2f3ff7b2f626e248adf12715dbca3d8, type: 2}
   musicSource: {fileID: 1220228386}
-  musicList: []
+  musicList:
+  - {fileID: 8300000, guid: cf04314ada1af4944b3510a0d4235cd2, type: 3}
+  - {fileID: 8300000, guid: 9e666cd6c368880499573cac6528a86c, type: 3}
   sfxSource: {fileID: 977167808}
-  sfxList: []
+  sfxList:
+  - {fileID: 8300000, guid: 59f0cfd716326c8419a323fd296e4610, type: 3}
+  - {fileID: 8300000, guid: 1a0c45128c530bd4480d5fab344408b1, type: 3}
+  - {fileID: 8300000, guid: 9158af1ce235706499f0c69fad7ba694, type: 3}
+  - {fileID: 8300000, guid: 7a2e798ffb329204788d2bd641c569f9, type: 3}
+  - {fileID: 8300000, guid: 15efd093943caa64fb383b53850605ca, type: 3}
+  - {fileID: 8300000, guid: 3e86f5631cb1ddd4aa78544f0a44a8d3, type: 3}
 --- !u!1 &965146815
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,7 +2035,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8497149432346170057, guid: d2f3ff7b2f626e248adf12715dbca3d8, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2271,7 +2279,7 @@ GameObject:
   - component: {fileID: 1013373088}
   m_Layer: 5
   m_Name: MasterVolSlider
-  m_TagString: Untagged
+  m_TagString: MasterVolSlider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2343,8 +2351,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1519299540}
   m_HandleRect: {fileID: 40845008}
   m_Direction: 0
-  m_MinValue: -60
-  m_MaxValue: 10
+  m_MinValue: -50
+  m_MaxValue: 0
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -2374,9 +2382,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5573a349183c6499bf193b048ed99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
-  audioManager: {fileID: 0}
-  uIManager: {fileID: 0}
-  group: Master
+  audioManager: {fileID: 950938728}
+  uIManager: {fileID: 208517143}
+  group: MasterVol
   slider: {fileID: 1013373087}
 --- !u!1 &1070696899
 GameObject:
@@ -2829,11 +2837,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5807453380010804040, guid: d2f3ff7b2f626e248adf12715dbca3d8, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: cf04314ada1af4944b3510a0d4235cd2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3344,7 +3352,7 @@ GameObject:
   - component: {fileID: 1602063580}
   m_Layer: 5
   m_Name: SFXVolSlider
-  m_TagString: Untagged
+  m_TagString: SFXVolSlider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3416,8 +3424,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1332635170}
   m_HandleRect: {fileID: 417518564}
   m_Direction: 0
-  m_MinValue: -60
-  m_MaxValue: 10
+  m_MinValue: -50
+  m_MaxValue: 0
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -3447,9 +3455,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5573a349183c6499bf193b048ed99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
-  audioManager: {fileID: 0}
-  uIManager: {fileID: 0}
-  group: SFX
+  audioManager: {fileID: 950938728}
+  uIManager: {fileID: 208517143}
+  group: SFXVol
   slider: {fileID: 1602063579}
 --- !u!1 &1662951925
 GameObject:
@@ -4188,6 +4196,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 352004797}
     m_Modifications:
+    - target: {fileID: 429266314909778981, guid: bc80c78b16968d2428bd960f699f781e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8893976414507053185, guid: 2630221e9cbb4a442a6f3e3d8b7b6664, type: 3}
     - target: {fileID: 1339344858555681965, guid: bc80c78b16968d2428bd960f699f781e, type: 3}
       propertyPath: m_Name
       value: StartButton
@@ -4284,6 +4296,10 @@ PrefabInstance:
       propertyPath: m_text
       value: START
       objectReference: {fileID: 0}
+    - target: {fileID: 5983133649198444739, guid: bc80c78b16968d2428bd960f699f781e, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: -8893976414507053185, guid: 2630221e9cbb4a442a6f3e3d8b7b6664, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4455,6 +4471,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1012221270}
     m_Modifications:
+    - target: {fileID: 429266314909778981, guid: bc80c78b16968d2428bd960f699f781e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8893976414507053185, guid: 2630221e9cbb4a442a6f3e3d8b7b6664, type: 3}
     - target: {fileID: 1339344858555681965, guid: bc80c78b16968d2428bd960f699f781e, type: 3}
       propertyPath: m_Name
       value: PlayButton
@@ -4543,6 +4563,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5983133649198444739, guid: bc80c78b16968d2428bd960f699f781e, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 6315020134864950601, guid: 25f2387ef9d3c4541a6ca069a933973c, type: 3}
+    - target: {fileID: 5983133649198444739, guid: bc80c78b16968d2428bd960f699f781e, type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: 6315020134864950601, guid: 25f2387ef9d3c4541a6ca069a933973c, type: 3}
+    - target: {fileID: 5983133649198444739, guid: bc80c78b16968d2428bd960f699f781e, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: -8893976414507053185, guid: 2630221e9cbb4a442a6f3e3d8b7b6664, type: 3}
+    - target: {fileID: 5983133649198444739, guid: bc80c78b16968d2428bd960f699f781e, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: -8893976414507053185, guid: 2630221e9cbb4a442a6f3e3d8b7b6664, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

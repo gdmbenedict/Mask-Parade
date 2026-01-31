@@ -12,27 +12,28 @@ public class VolumeSlider : MonoBehaviour
     {
         if(audioManager == null)
         {
-            audioManager = GameObject.FindAnyObjectByType<AudioManager>();
+            audioManager = GameObject.FindFirstObjectByType<AudioManager>();
         }
         if(uIManager == null)
         {
-            uIManager = GameObject.FindAnyObjectByType<UIManager>();
-            switch(group)
-            {
-                case "Master":
-                    uIManager.masterVolSlider = slider;
-                    break;
-                case "Music":
-                    uIManager.musicVolSlider = slider;
-                    break;
-                case "SFX":
-                    uIManager.sFXVolSlider = slider;
-                    break;
-            }
+            uIManager = GameObject.FindFirstObjectByType<UIManager>();
         }
         if(slider == null)
         {
             slider = this.GetComponent<Slider>();
+        }
+
+        if(group == "MasterVol")
+        {
+            uIManager.masterVolSlider = slider;
+        }
+        if(group == "MusicVol")
+        {
+            uIManager.musicVolSlider = slider;
+        }
+        if(group == "SFXVol")
+        {
+            uIManager.sFXVolSlider = slider;
         }
     }
 
