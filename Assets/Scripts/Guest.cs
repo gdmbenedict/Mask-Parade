@@ -9,6 +9,7 @@ public class Guest
     public ClothesColor maskColor;
     public ClothesType clothesType;
     public ClothesColor clothesColor;
+    public HairStyle hairStyle;
     public Handedness handedness;
     public Height guestHeight;
     public Weight guestWeight;
@@ -23,6 +24,7 @@ public class Guest
         maskColor = GetRandomEnumValue<ClothesColor>();
         clothesType = GetRandomEnumValue<ClothesType>();
         clothesColor = GetRandomEnumValue<ClothesColor>();
+        hairStyle = GetRandomEnumValue<HairStyle>();
         handedness = GetRandomEnumValue<Handedness>();
         guestHeight = GetRandomEnumValue<Height>();
         guestWeight = GetRandomEnumValue<Weight>();
