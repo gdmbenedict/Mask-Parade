@@ -29,6 +29,8 @@ public class SystemManager : MonoBehaviour
             GameObject.DontDestroyOnLoad(this.gameObject);
             systemManager = this;
         }
+        uIManager.systemManager = this;
+        audioManager.systemManager = this;
     }
 
     // Update is called once per frame
