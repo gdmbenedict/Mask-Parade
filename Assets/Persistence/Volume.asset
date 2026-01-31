@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c853c83f6571b784997b0d3b24f5db1f, type: 3}
   m_Name: Volume
   m_EditorClassIdentifier: Assembly-CSharp::Volume
-  MasterVol: -26
-  MusicVol: -14
-  SFXVol: -34
+  MasterVol: 0
+  MusicVol: 0
+  SFXVol: 0

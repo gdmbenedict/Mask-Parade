@@ -178,10 +178,9 @@ public class UIManager : MonoBehaviour
     #region OptionsMenu
     public void GetStartingVolume()
     {
-
-        masterVolSlider.value = audioManager.volume.MasterVol;
-        musicVolSlider.value = audioManager.volume.MusicVol;
-        sFXVolSlider.value = audioManager.volume.SFXVol;
+        masterVolSlider.value = audioManager.GetStartingVol("Master");
+        musicVolSlider.value = audioManager.GetStartingVol("Music");
+        sFXVolSlider.value = audioManager.GetStartingVol("SFX");
     }
     public void SetPresitantVolume()
     {

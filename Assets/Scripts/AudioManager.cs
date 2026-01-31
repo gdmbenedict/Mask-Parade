@@ -22,16 +22,20 @@ public class AudioManager : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     #endregion
     #region SFX Control
+    public void PlaySFX(int sfxNum)
+    {
+        sfxSource.PlayOneShot(sfxList[sfxNum]);
+    }
     #endregion
     #region Music Control
+    public void PlayMusic(int musicNum)
+    {
+        musicSource.clip = musicList[musicNum];
+        musicSource.loop = true;
+        musicSource.Play();
+    }
     #endregion
     #region Volume Control
     /// <summary>
@@ -44,6 +48,23 @@ public class AudioManager : MonoBehaviour
         mixer.SetFloat(group,value);
     }
 
+    public float GetStartingVol(string group)
+    {
+        float value = 0;
+        switch(group)
+        {
+            case "Master":
+                value = volume.MasterVol;
+                break;
+            case "Music":
+                value = volume.MusicVol;
+                break;
+            case "SFX":
+                value = volume.SFXVol;
+                break;
+        }
+        return value;
+    }
     public void UpdateVoluem(float value, string group)
     {
         volume.UpdateVoluem(value,group);
