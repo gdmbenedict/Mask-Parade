@@ -31,6 +31,7 @@ public class SystemManager : MonoBehaviour
         }
         uIManager.systemManager = this;
         audioManager.systemManager = this;
+        uIManager.audioManager = audioManager;
     }
 
     // Update is called once per frame
@@ -40,11 +41,12 @@ public class SystemManager : MonoBehaviour
     }
     #endregion
     #region Game States
-/// <summary>
+    /// <summary>
     /// Used to change game state at specific points, runing methods only once instead of every frame.
     /// </summary>
-    public void ChangeGameState()
+    public void ChangeGameState(GameState state)
     {
+        gameState = state;
         Debug.Log("Changing to " + gameState + " Gamestate");
         switch(gameState)
         {

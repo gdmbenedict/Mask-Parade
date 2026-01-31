@@ -15,7 +15,8 @@ public class UIManager : MonoBehaviour
     [Header("Paramiters")]
     public float fadeTime = 0.5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    #region Unity Core
+    void Awake()
     {
         FetchUIElements();
     }
@@ -25,7 +26,11 @@ public class UIManager : MonoBehaviour
     {
         
     }
-
+    #endregion
+    #region UI Control
+    /// <summary>
+    /// grabs UI elemnts in case they are nulled (like when loading back to menu from gameplay)
+    /// </summary>
     void FetchUIElements()
     {
         if(menuUI == null)
@@ -35,6 +40,36 @@ public class UIManager : MonoBehaviour
         if(howToUI == null)
         {
             howToUI = GameObject.FindWithTag("HowToPanel");
+            if(systemManager.gameState == SystemManager.GameState.MainMenu)
+            {
+                howToUI.SetActive(false);
+            }
         }
     }
+
+    /// <summary>
+    /// Used by first play button to go how to play and dificulty selection.
+    /// </summary>
+    public void GoToHowToPlay()
+    {
+        menuUI.SetActive(false);
+        howToUI.SetActive(true); 
+    }
+
+    /// <summary>
+    /// Goes back to main menu from how to play
+    /// </summary>
+    public void HowToBackToMenu()
+    {
+        menuUI.SetActive(true);
+        howToUI.SetActive(false); 
+    }
+
+    public void StartGame()
+    {
+        systemManager.LoadScene("Gameplay");
+        systemManager.ChangeGameState(SystemManager.GameState.Gameplay);
+    }
+
+    #endregion
 }

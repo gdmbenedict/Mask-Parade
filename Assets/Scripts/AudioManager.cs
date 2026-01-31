@@ -5,6 +5,7 @@ public class AudioManager : MonoBehaviour
     [Header("Manager Referances")]
     public SystemManager systemManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    #region Unity Core
     void Start()
     {
         
@@ -15,4 +16,9 @@ public class AudioManager : MonoBehaviour
     {
         
     }
+    #endregion
+    #region SFX Control
+    #endregion
+    #region Music Control
+    #endregion
 }
