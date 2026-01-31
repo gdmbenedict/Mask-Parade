@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrarySourceAsset
+  m_Library:
+  - m_Name: mask
+    m_Hash: 1064289072
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: beak
+      m_Hash: 418450281
+      m_Sprite: {fileID: 21300000, guid: c4ecb076e96c3b24596c49c838c4332b, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: c4ecb076e96c3b24596c49c838c4332b, type: 3}
+    - m_Name: cat
+      m_Hash: 509494184
+      m_Sprite: {fileID: 21300000, guid: 398f224eb2365b44994be18e0fb22137, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 398f224eb2365b44994be18e0fb22137, type: 3}
+    - m_Name: fang
+      m_Hash: 515138566
+      m_Sprite: {fileID: 21300000, guid: a9bc32251fda4a64dabbfa90a6742ade, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: a9bc32251fda4a64dabbfa90a6742ade, type: 3}
+    - m_Name: horn
+      m_Hash: 727636934
+      m_Sprite: {fileID: 21300000, guid: df87b9d6e77c85e4db8c4a77bb3ea5ee, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: df87b9d6e77c85e4db8c4a77bb3ea5ee, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 4
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639054596424103037
+  m_Version: 1
