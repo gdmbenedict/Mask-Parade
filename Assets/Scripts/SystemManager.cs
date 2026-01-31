@@ -10,7 +10,7 @@ public class SystemManager : MonoBehaviour
     public UIManager uIManager;
     public AudioManager audioManager;
     public static SystemManager systemManager;
-    public enum GameState{MainMenu, Gameplay, Options, Paused, GameEnd}
+    public enum GameState{MainMenu, Gameplay, Paused, GameEnd}
     [Header("Game States")]
     public GameState gameState;
     public GameState prevState;
@@ -54,8 +54,6 @@ public class SystemManager : MonoBehaviour
                 break;
             case GameState.Gameplay:
                 break;
-            case GameState.Options:
-                break;
             case GameState.Paused:
                 break;
             case GameState.GameEnd:
@@ -65,15 +63,11 @@ public class SystemManager : MonoBehaviour
 
     public void MainMenu()
     {
-        
+        uIManager.FetchUIElements();
+        uIManager.ResetMenu();
     }
 
     public void Gameplay()
-    {
-        
-    }
-
-    public void Options()
     {
         
     }
