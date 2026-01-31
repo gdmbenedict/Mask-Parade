@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae7a02e38128e4428c631bb71f424f9, type: 3}
+  m_Name: SkinColours
+  m_EditorClassIdentifier: Assembly-CSharp::GuestColours
+  colors:
+  - {r: 0.97647065, g: 0.83921576, b: 0.75294125, a: 0}
+  - {r: 0.9490197, g: 0.7686275, b: 0.63529414, a: 0}
+  - {r: 0.6627451, g: 0.41960788, b: 0.32941177, a: 0}
+  - {r: 0.49803925, g: 0.2627451, b: 0.12941177, a: 0}
+  - {r: 0.29411766, g: 0.18823531, b: 0.1137255, a: 0}
