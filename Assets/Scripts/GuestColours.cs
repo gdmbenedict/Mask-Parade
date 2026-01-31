@@ -5,9 +5,16 @@ using System.Collections.Generic;
 public class GuestColours : ScriptableObject
 {
     [SerializeField] private List<Color> colors;
-    
+    [SerializeField] private List<string> colorNames;
+
     public Color GetRandomColor()
     {
         return colors[Random.Range(0, colors.Count)];
+    }
+
+    public Color GetColor(string colorName)
+    {
+        int index = colorNames.IndexOf(colorName.ToLower());
+        return colors[index];
     }
 }

@@ -18,3 +18,9 @@ MonoBehaviour:
   - {r: 0.6627451, g: 0.41960788, b: 0.32941177, a: 0}
   - {r: 0.49803925, g: 0.2627451, b: 0.12941177, a: 0}
   - {r: 0.29411766, g: 0.18823531, b: 0.1137255, a: 0}
+  colorNames:
+  - pale
+  - olive
+  - light brown
+  - brown
+  - black brown

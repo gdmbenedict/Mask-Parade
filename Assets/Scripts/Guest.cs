@@ -117,7 +117,8 @@ public class Guest
         red,
         blonde,
         black,
-        brown
+        brown,
+        white
     }
 }
 
