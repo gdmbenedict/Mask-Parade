@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI rulesText;
     public TextMeshProUGUI timeRemaining;
     public List<GameObject> stikeObjects;
+    public TextMeshProUGUI hudScore;
     [Header("Results Menu UI Elements")]
     public TextMeshProUGUI runScoreText;
     public TextMeshProUGUI highScoreText;
@@ -299,6 +300,11 @@ public class UIManager : MonoBehaviour
         {
             stikeObjects[i].SetActive(false);
         }
+    }
+
+    public void SetHUDScore(float score)
+    {
+        hudScore.text = string.Format("{0}",score);
     }
     #endregion
     #region Rersults Control
