@@ -702,6 +702,7 @@ MonoBehaviour:
   - {fileID: 57761346}
   - {fileID: 1457088033}
   - {fileID: 773916029}
+  hudScore: {fileID: 1011871739}
   runScoreText: {fileID: 2022842546}
   highScoreText: {fileID: 1398034722}
 --- !u!1 &210369815

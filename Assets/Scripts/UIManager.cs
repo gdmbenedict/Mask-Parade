@@ -294,7 +294,7 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// Resets the strikes for when people try again. 
     /// </summary>
-    private void ResetStrikes()
+    public void ResetStrikes()
     {
         for(int i = 0; i < stikeObjects.Count; i++)
         {
@@ -319,12 +319,12 @@ public class UIManager : MonoBehaviour
         SetResultsScoreText(runScore);
         SetHighScoreText(scores.scores[0]);
     }
-    private void SetResultsScoreText(float score)
+    public void SetResultsScoreText(float score)
     {
         runScoreText.text = string.Format("Your score = {0}",score);
         scores.CheckHighSocres(score);
     }
-    private void SetHighScoreText(float score)
+    public void SetHighScoreText(float score)
     {
         runScoreText.text = string.Format("High score = {0}",score);
     }
