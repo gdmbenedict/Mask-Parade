@@ -695,8 +695,15 @@ MonoBehaviour:
   hud: {fileID: 1775099447}
   pauseMenu: {fileID: 1561524739}
   rulesText: {fileID: 1953381868}
-  runScoreText: {fileID: 0}
-  highScoreText: {fileID: 0}
+  timeRemaining: {fileID: 1307435969}
+  stikeObjects:
+  - {fileID: 345604116}
+  - {fileID: 842363330}
+  - {fileID: 57761346}
+  - {fileID: 1457088033}
+  - {fileID: 773916029}
+  runScoreText: {fileID: 2022842546}
+  highScoreText: {fileID: 1398034722}
 --- !u!1 &210369815
 GameObject:
   m_ObjectHideFlags: 0
