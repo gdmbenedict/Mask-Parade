@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 90b43963c51db0e4aa3b59718807a1f9
+guid: cb21f067a53eb1f4c96d288a3b0a31b3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2128748258285263508
-    second: Hair_Widehat_0
+      213: -6944595405006870877
+    second: Hair_WideHat_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hair_Widehat_0
+      name: Hair_WideHat_0
       rect:
         serializedVersion: 2
         x: 5
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c65eca8dcba2572e0800000000000000
-      internalID: -2128748258285263508
+      spriteID: 3a661cfe547df9f90800000000000000
+      internalID: -6944595405006870877
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hair_Widehat_0: -2128748258285263508
+      Hair_WideHat_0: -6944595405006870877
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

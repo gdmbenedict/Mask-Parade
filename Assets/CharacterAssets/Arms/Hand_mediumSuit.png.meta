@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5e50dfa91ddb44f47b894cbde1ace1c6
+guid: e7be79a80369f564195b209bfdc3b961
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6870563936329250185
-    second: Hand_mediumSuit_0
+      213: -4520019914212411508
+    second: Hand_MediumSuit_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hand_mediumSuit_0
+      name: Hand_MediumSuit_0
       rect:
         serializedVersion: 2
         x: 810
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 77a4c70708ad6a0a0800000000000000
-      internalID: -6870563936329250185
+      spriteID: c877dab06d9a541c0800000000000000
+      internalID: -4520019914212411508
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hand_mediumSuit_0: -6870563936329250185
+      Hand_MediumSuit_0: -4520019914212411508
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
