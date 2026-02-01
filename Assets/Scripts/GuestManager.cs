@@ -4,7 +4,7 @@ using UnityEngine.U2D.Animation;
 
 public class GuestManager : MonoBehaviour
 {
-    private Guest guest = new Guest();
+    public Guest guest = new Guest();
 
     [Header("Guest Visual")]
     [SerializeField] private Transform guestVisual;
@@ -39,9 +39,6 @@ public class GuestManager : MonoBehaviour
     private void Start()
     {
         startPos = guestVisual.localPosition.y;
-
-        //testing
-        GenerateNewGuest();
     }
 
     public void GenerateNewGuest()

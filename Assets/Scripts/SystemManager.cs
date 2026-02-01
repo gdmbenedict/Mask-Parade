@@ -18,7 +18,7 @@ public class SystemManager : MonoBehaviour
     public List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     #region Core Unity
-    void Start()
+    void Awake()
     {
         if(systemManager != null)
         {

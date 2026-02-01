@@ -2,11 +2,10 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 
-public class Criteria<Main, Secondary>
+public class Criteria<Main, Secondary> : AbstractCriteria
     where Main : struct, Enum
     where Secondary : struct, Enum
 {
-    public CriteriaType criteriaType;
     public Main mainCondition;
     public Secondary secondCondition;
 
@@ -16,8 +15,8 @@ public class Criteria<Main, Secondary>
     public Criteria()
     {
         //randomly determine criteria type
-        bool allowed = UnityEngine.Random.Range(0, 1) < allowChance ? true : false;
-        bool except = UnityEngine.Random.Range(0, 1) < exceptChance ? true : false;
+        bool allowed = UnityEngine.Random.Range(0f, 1f) < allowChance ? true : false;
+        bool except = UnityEngine.Random.Range(0f, 1f) < exceptChance ? true : false;
 
         //select correct criteria type
         if (allowed && except) criteriaType = CriteriaType.allowExcept;
@@ -35,7 +34,7 @@ public class Criteria<Main, Secondary>
         }
     }
 
-    public bool CheckCriteria(Guest guest)
+    public override bool CheckCriteria(Guest guest)
     {
         bool result = false;
 
@@ -64,7 +63,7 @@ public class Criteria<Main, Secondary>
         return result;
     }
 
-    public string GetCriteriaDescription()
+    public override string GetCriteriaDescription()
     {
         string description = "";
 
@@ -84,7 +83,7 @@ public class Criteria<Main, Secondary>
         //unless description
         if (criteriaType == CriteriaType.notAllowedExcept || criteriaType == CriteriaType.allowExcept)
         {
-            description += "unless they ";
+            description += " unless they ";
 
             //secondary condition description
             description += GetConditionDescription<Secondary>(secondCondition);
