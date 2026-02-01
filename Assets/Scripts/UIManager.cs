@@ -28,8 +28,9 @@ public class UIManager : MonoBehaviour
     public Slider musicVolSlider;
     public Slider sFXVolSlider;
     [Header("HUD Menu UI Elements")]
-    public GameObject hudObject;
-    public GameObject rulesClipbaord;
+    public GameObject hudParentObject;
+    public GameObject hud;
+    public GameObject pauseMenu;
     public TextMeshProUGUI rulesText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     #region Unity Core
@@ -85,8 +86,28 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void HowToBackToMenu()
     {
-        ResetMenu();
-        SetPresitantVolume(); 
+        ResetMenu(); 
+    }
+
+    public void BackFromOptions()
+    {
+        if(systemManager.gameState == SystemManager.GameState.MainMenu)
+        {
+            CloseAllUI();
+            ResetMenu();
+        }
+        else if(systemManager.gameState == SystemManager.GameState.Paused)
+        {
+            CloseAllUI();
+            pauseMenu.SetActive(true);
+        }
+        SetPresitantVolume();
+    }
+
+    public void ReturnToMenu()
+    {
+        systemManager.LoadScene("Menu");
+        systemManager.ChangeGameState(SystemManager.GameState.MainMenu);
     }
 
     public void StartGame()
@@ -111,10 +132,12 @@ public class UIManager : MonoBehaviour
 
     public void CloseAllUI()
     {
-        hudObject.SetActive(false);
+        hud.SetActive(false);
         menuUI.SetActive(false);
         howToUI.SetActive(false); 
         optionsUI.SetActive(false);
+        pauseMenu.SetActive(false);
+
     }
 
     #endregion
@@ -214,7 +237,19 @@ public class UIManager : MonoBehaviour
     {
         CloseAllUI();
         menuBG.SetActive(false);
-        hudObject.SetActive(true);
+        hud.SetActive(true);
+    }
+
+    public void Pause()
+    {
+        hud.SetActive(false);
+        pauseMenu.SetActive(true);
+    }
+
+    public void UnPause()
+    {
+        hud.SetActive(true);
+        pauseMenu.SetActive(false);
     }
 
     public void SetRulesText(string newText)
