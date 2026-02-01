@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: ClothesColours
   m_EditorClassIdentifier: Assembly-CSharp::GuestColours
   colors:
-  - {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 0}
-  - {r: 1, g: 0, b: 0, a: 0}
-  - {r: 1, g: 1, b: 0, a: 0}
-  - {r: 0, g: 0, b: 1, a: 0}
-  - {r: 0.1764706, g: 0.1764706, b: 0.1764706, a: 0}
+  - {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 0.1764706, g: 0.1764706, b: 0.1764706, a: 1}
   colorNames:
   - white
   - red

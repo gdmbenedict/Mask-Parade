@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 196614520}
   - component: {fileID: 196614519}
   - component: {fileID: 196614518}
+  - component: {fileID: 196614522}
   m_Layer: 5
   m_Name: GuestsManager
   m_TagString: Untagged
@@ -348,6 +349,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &196614522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196614517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5d69f2127daae449e84906e31924b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GuestManager
+  guestVisual: {fileID: 583582745}
+  bodyResolver: {fileID: 78925626}
+  maskResolver: {fileID: 1928475999}
+  hairResolver: {fileID: 1480645414}
+  armResolver: {fileID: 1638714964}
+  clothesResolver: {fileID: 449709604}
+  bodyRenderer: {fileID: 78925628}
+  maskRenderer: {fileID: 1928476001}
+  hairRenderer: {fileID: 1480645416}
+  armRenderer: {fileID: 1638714966}
+  clothesRenderer: {fileID: 449709606}
+  clothesColors: {fileID: 11400000, guid: f3f510aebfdfb3c49b576da5b6364dd3, type: 2}
+  hairColors: {fileID: 11400000, guid: 62ac456ee9b046c4a89369e238d400fe, type: 2}
+  skinColors: {fileID: 11400000, guid: 477e7a19fffd7f649a66f1d711345fbb, type: 2}
 --- !u!1 &449709602
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 780, y: 1050}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1337143377
@@ -703,9 +730,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteResolver
   m_CategoryHash: 1.6370188e-21
-  m_labelHash: 0.004628349
+  m_labelHash: 2.0169418e-26
   m_SpriteKey: 0
-  m_SpriteHash: 631708837
+  m_SpriteHash: 295210941
 --- !u!114 &1480645415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,7 +796,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 0164ded15dd9eba4fb32233f6427588c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c371de5fd275be409c72401eb49c6da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -830,9 +857,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteResolver
   m_CategoryHash: 2.8756733e-24
-  m_labelHash: 1.327867e-33
+  m_labelHash: 0.0000000061403815
   m_SpriteKey: 0
-  m_SpriteHash: 967629289
+  m_SpriteHash: 354552187
 --- !u!114 &1638714965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,7 +923,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 5
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 559f2ab02c60a96428d8c9aee8c61dd7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 000a05d31e5c77c45a44fc69080322a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

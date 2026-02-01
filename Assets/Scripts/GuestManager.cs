@@ -1,9 +1,15 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 
 public class GuestManager : MonoBehaviour
 {
     private Guest guest = new Guest();
+
+    [Header("Guest Visual")]
+    [SerializeField] private Transform guestVisual;
+    private float startPos;
+    private float heightStep = 100;
 
     [Header("Sprite Resolvers")]
     [SerializeField] private SpriteResolver bodyResolver;
@@ -30,15 +36,281 @@ public class GuestManager : MonoBehaviour
     private string armCategory = "arm";
     private string clothesCategory = "clothes";
 
+    private void Start()
+    {
+        startPos = guestVisual.localPosition.y;
+
+        //testing
+        GenerateNewGuest();
+    }
+
+    public void GenerateNewGuest()
+    {
+        //fade out
+        //play walking sound
+
+        guest.GenerateGuest();
+        SetGuestVisuals();
+
+        //fade in
+    }
+
     private void SetGuestVisuals()
     {
         SetSprites();
         SetColors();
+        SetHeight();
+        SetHandedness();
+    }
+
+    private void SetHandedness()
+    {
+        if (guest.handedness == Guest.Handedness.right)
+        {
+            guestVisual.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            guestVisual.localScale = new Vector3(1, 1, 1);
+        }
+    }
+
+    private void SetHeight()
+    {
+        float mult;
+
+        switch (guest.guestHeight)
+        {
+            case Guest.Height.tall:
+                mult = 0;
+                break;
+
+            case Guest.Height.medium:
+                mult = 1;
+                break;
+
+            case Guest.Height.small:
+                mult = 2;
+                break;
+
+            default:
+                mult = 0;
+                break;
+        }
+
+        float newPos = startPos - (heightStep * mult);
+        guestVisual.localPosition = new Vector3(guestVisual.localPosition.x, newPos, guestVisual.localPosition.z);
     }
 
     private void SetSprites()
     {
+        SetBodySprite();
+        SetClothesSprite();
+        SetArmSprite();
+        SetHairSprite();
+        SetMaskSprite();
+    }
 
+    private void SetBodySprite()
+    {
+        string label = "";
+
+        switch (guest.guestWeight)
+        {
+            case Guest.Weight.large:
+                label = "large";
+                break;
+
+            case Guest.Weight.medium:
+                label = "medium";
+                break;
+
+            case Guest.Weight.thin:
+                label = "small";
+                break;
+
+            default:
+                label = "large";
+                break;
+        }
+
+        bodyResolver.SetCategoryAndLabel(bodyCategory, label);
+    }
+
+    private void SetClothesSprite()
+    {
+        string label = "";
+
+        if (guest.clothesType == Guest.ClothesType.dress)
+        {
+            switch (guest.guestWeight)
+            {
+                case Guest.Weight.large:
+                    label = "dress_large";
+                    break;
+
+                case Guest.Weight.medium:
+                    label = "dress_medium";
+                    break;
+
+                case Guest.Weight.thin:
+                    label = "dress_small";
+                    break;
+
+                default:
+                    label = "dress_large";
+                    break;
+            }
+        }
+        else
+        {
+            switch (guest.guestWeight)
+            {
+                case Guest.Weight.large:
+                    label = "suit_large";
+                    break;
+
+                case Guest.Weight.medium:
+                    label = "suit_medium";
+                    break;
+
+                case Guest.Weight.thin:
+                    label = "suit_small";
+                    break;
+
+                default:
+                    label = "suit_large";
+                    break;
+            }
+        }
+
+        clothesResolver.SetCategoryAndLabel(clothesCategory, label);
+    }
+
+    private void SetArmSprite()
+    {
+        string label = "";
+
+        if (guest.clothesType == Guest.ClothesType.dress)
+        {
+            switch (guest.guestWeight)
+            {
+                case Guest.Weight.large:
+                    label = "dress_large";
+                    break;
+
+                case Guest.Weight.medium:
+                    label = "dress_medium";
+                    break;
+
+                case Guest.Weight.thin:
+                    label = "dress_small";
+                    break;
+
+                default:
+                    label = "dress_large";
+                    break;
+            }
+        }
+        else
+        {
+            switch (guest.guestWeight)
+            {
+                case Guest.Weight.large:
+                    label = "suit_large";
+                    break;
+
+                case Guest.Weight.medium:
+                    label = "suit_medium";
+                    break;
+
+                case Guest.Weight.thin:
+                    label = "suit_small";
+                    break;
+
+                default:
+                    label = "suit_large";
+                    break;
+            }
+        }
+
+        armResolver.SetCategoryAndLabel(armCategory, label);
+    }
+
+    private void SetMaskSprite()
+    {
+        string label = "";
+
+        switch (guest.maskShape)
+        {
+            case Guest.MaskShape.owl:
+                label = "owl";
+                break;
+
+            case Guest.MaskShape.cat:
+                label = "cat";
+                break;
+
+            case Guest.MaskShape.fanged:
+                label = "fanged";
+                break;
+
+            case Guest.MaskShape.horned:
+                label = "horned";
+                break;
+
+            case Guest.MaskShape.bunny:
+                label = "bunny";
+                break;
+
+            case Guest.MaskShape.gilled:
+                label = "gilled";
+                break;
+
+            default:
+                label = "owl";
+                break;
+        }
+
+        maskResolver.SetCategoryAndLabel(maskCategory, label);
+    }
+
+    private void SetHairSprite()
+    {
+        string label = "";
+
+        switch (guest.hairStyle)
+        {
+            case Guest.HairStyle.bob:
+                label = "bob";
+                break;
+
+            case Guest.HairStyle.braided:
+                label = "braided";
+                break;
+
+            case Guest.HairStyle.flowing:
+                label = "flowing";
+                break;
+
+            case Guest.HairStyle.coiffed:
+                label = "coiffed";
+                break;
+
+            case Guest.HairStyle.updo:
+                label = "updo";
+                break;
+
+            case Guest.HairStyle.hatted:
+                label = "hatted";
+                break;
+
+            default:
+                label = "bob";
+                break;
+        }
+
+        hairResolver.SetCategoryAndLabel(hairCategory, label);
     }
 
     private void SetColors()
@@ -51,6 +323,7 @@ public class GuestManager : MonoBehaviour
     private void SetClothesColor()
     {
         clothesRenderer.color = clothesColors.GetColor(GetClothesColorName(guest.clothesColor));
+        armRenderer.color = clothesColors.GetColor(GetClothesColorName(guest.clothesColor));
         maskRenderer.color = clothesColors.GetColor(GetClothesColorName(guest.maskColor));
     }
 
