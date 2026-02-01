@@ -74,6 +74,7 @@ public class SystemManager : MonoBehaviour
                 Paused();
                 break;
             case GameState.GameEnd:
+                GameEnd();
                 break;
         }
     }

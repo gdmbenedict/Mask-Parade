@@ -34,6 +34,9 @@ public class UIManager : MonoBehaviour
     public GameObject hud;
     public GameObject pauseMenu;
     public TextMeshProUGUI rulesText;
+    [Header("Results Menu UI Elements")]
+    public TextMeshProUGUI runScoreText;
+    public TextMeshProUGUI highScoreText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     #region Unity Core
     void Start()
@@ -260,13 +263,21 @@ public class UIManager : MonoBehaviour
     }
     #endregion
     #region Rersults Control
+    public void GetResults(float runScore)
+    {
+        CloseAllUI();
+        resultsUI.SetActive(true);
+        SetResultsScoreText(runScore);
+        SetHighScoreText(scores.scores[0]);
+    }
     public void SetResultsScoreText(float score)
     {
-        
+        runScoreText.text = string.Format("Your score = {0}",score);
+        scores.CheckHighSocres(score);
     }
     public void SetHighScoreText(float score)
     {
-        
+        runScoreText.text = string.Format("High score = {0}",score);
     }
     #endregion
 }

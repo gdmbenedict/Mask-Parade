@@ -695,6 +695,8 @@ MonoBehaviour:
   hud: {fileID: 1775099447}
   pauseMenu: {fileID: 1561524739}
   rulesText: {fileID: 1953381868}
+  runScoreText: {fileID: 0}
+  highScoreText: {fileID: 0}
 --- !u!1 &210369815
 GameObject:
   m_ObjectHideFlags: 0
@@ -4865,8 +4867,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -96}
-  m_SizeDelta: {x: 444.6596, y: 174.48}
+  m_AnchoredPosition: {x: 0, y: -42.781433}
+  m_SizeDelta: {x: 444.6596, y: 68.0429}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1398034722
 MonoBehaviour:
@@ -4888,7 +4890,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: High Score goes here!
+  m_text: High Score = 1000000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e1cd006f170c29408c934590eb32c5b, type: 2}
   m_sharedMaterial: {fileID: 5152304718125112626, guid: 1e1cd006f170c29408c934590eb32c5b, type: 2}
@@ -4915,14 +4917,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.07
-  m_fontSizeBase: 53.07
+  m_fontSize: 44
+  m_fontSizeBase: 44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7248,8 +7250,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 87.238}
-  m_SizeDelta: {x: 444.6596, y: 174.48}
+  m_AnchoredPosition: {x: 0, y: 83}
+  m_SizeDelta: {x: 444.6596, y: 76.1064}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2022842546
 MonoBehaviour:
@@ -7271,7 +7273,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your score goes here!
+  m_text: Your score = 1000000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e1cd006f170c29408c934590eb32c5b, type: 2}
   m_sharedMaterial: {fileID: 5152304718125112626, guid: 1e1cd006f170c29408c934590eb32c5b, type: 2}
@@ -7298,14 +7300,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.07
-  m_fontSizeBase: 53.07
+  m_fontSize: 44
+  m_fontSizeBase: 44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
