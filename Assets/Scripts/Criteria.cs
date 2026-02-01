@@ -25,8 +25,10 @@ public class Criteria<Main, Secondary>
         else if (!allowed && except) criteriaType = CriteriaType.notAllowedExcept;
         else if (!allowed && !except) criteriaType = CriteriaType.notAllowed;
 
+        //select main condition
         mainCondition = GetRandomEnumValue<Main>();
         
+        //select secondary condition if applicable
         if(criteriaType == CriteriaType.allowExcept || criteriaType == CriteriaType.notAllowedExcept)
         {
             secondCondition = GetRandomEnumValue<Secondary>();
@@ -69,18 +71,66 @@ public class Criteria<Main, Secondary>
         //allow or don't allow text
         if (criteriaType == CriteriaType.notAllowedExcept || criteriaType == CriteriaType.notAllowed)
         {
-            description += "Do not allow entry to guests";
+            description += "Do not allow entry to guests that";
         }
         else
         {
-            description += "Let guests in";
+            description += "Let guests in that";
         }
 
         //main condition description
+        description += GetConditionDescription<Main>(mainCondition);
 
         //unless description
+        if (criteriaType == CriteriaType.notAllowedExcept || criteriaType == CriteriaType.allowExcept)
+        {
+            description += "unless they ";
 
-        //secondary condition description
+            //secondary condition description
+            description += GetConditionDescription<Secondary>(secondCondition);
+        }
+
+        description += ".";
+
+        return description;
+    }
+
+    private string GetConditionDescription<T>(T condition) where T: struct, Enum
+    {
+        string description = "";
+
+        if (typeof(T) == typeof(Guest.MaskShape))
+        {
+            description += " have a " + condition.ToString() + " mask";
+        }
+        else if (typeof(T) == typeof(Guest.MaskColor))
+        {
+            description += " have a " + condition.ToString() + " mask";
+        }
+        else if (typeof(T) == typeof(Guest.ClothesType))
+        {
+            description += " have a " + condition.ToString();
+        }
+        else if (typeof(T) == typeof(Guest.ClothesColor))
+        {
+            description += " have " + condition.ToString() + " clothes";
+        }
+        else if (typeof(T) == typeof(Guest.HairStyle))
+        {
+            description += " have a " + condition.ToString() + " hairdo";
+        }
+        else if (typeof(T) == typeof(Guest.Handedness))
+        {
+            description += " are " + condition.ToString() + " handed";
+        }
+        else if (typeof(T) == typeof(Guest.Height))
+        {
+            description += " are of " + condition.ToString() + " height";
+        }
+        else if (typeof(T) == typeof(Guest.Weight))
+        {
+            description += " have a " + condition.ToString() + " build";
+        }
 
         return description;
     }
