@@ -261,7 +261,10 @@ public class UIManager : MonoBehaviour
         hud.SetActive(true);
         pauseMenu.SetActive(false);
     }
-
+    /// <summary>
+    /// Sets the text for the clipboard. 
+    /// </summary>
+    /// <param name="newText"></param>
     public void SetRulesText(string newText)
     {
         rulesText.text = newText;
@@ -276,6 +279,10 @@ public class UIManager : MonoBehaviour
         TimeSpan timeSpan = TimeSpan.FromSeconds(time);
         timeRemaining.text = string.Format("{0}:{1:00}",timeSpan.Minutes,timeSpan.Seconds);
     }
+    /// <summary>
+    /// Sets the active stikes on the HUD
+    /// </summary>
+    /// <param name="strikes"></param>
     public void SetStrikes(int strikes)
     {
         for(int i = 0; i < strikes; i++)
@@ -283,6 +290,9 @@ public class UIManager : MonoBehaviour
             stikeObjects[i].SetActive(true);
         }
     }
+    /// <summary>
+    /// Resets the strikes for when people try again. 
+    /// </summary>
     private void ResetStrikes()
     {
         for(int i = 0; i < stikeObjects.Count; i++)
@@ -292,6 +302,10 @@ public class UIManager : MonoBehaviour
     }
     #endregion
     #region Rersults Control
+    /// <summary>
+    /// Takes in the score for the run, and sets up the results ui acordingly. 
+    /// </summary>
+    /// <param name="runScore"></param>
     public void GetResults(float runScore)
     {
         CloseAllUI();
