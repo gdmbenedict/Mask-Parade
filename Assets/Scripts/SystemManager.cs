@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 public class SystemManager : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class SystemManager : MonoBehaviour
     [Header("Game States")]
     public GameState gameState;
     public GameState prevState;
-    public bool isPaused;
     public List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     #region Core Unity
@@ -39,6 +39,19 @@ public class SystemManager : MonoBehaviour
     {
         
     }
+
+    public void OnPause()
+    {
+        switch(gameState)
+        {
+            case GameState.Gameplay:
+                ChangeGameState(GameState.Paused);
+                break;
+            case GameState.Paused:
+                ChangeGameState(GameState.Gameplay);
+                break;
+        }
+    }
     #endregion
     #region Game States
     /// <summary>
@@ -46,6 +59,7 @@ public class SystemManager : MonoBehaviour
     /// </summary>
     public void ChangeGameState(GameState state)
     {
+        prevState = gameState;
         gameState = state;
         Debug.Log("Changing to " + gameState + " Gamestate");
         switch(gameState)
@@ -57,30 +71,40 @@ public class SystemManager : MonoBehaviour
                 Gameplay();
                 break;
             case GameState.Paused:
+                Paused();
                 break;
             case GameState.GameEnd:
                 break;
         }
     }
 
-    public void MainMenu()
+    private void MainMenu()
     {
-        uIManager.FetchUIElements();
-        uIManager.ResetMenu();
-        audioManager.PlayMusic(0);
+        if(prevState == GameState.Paused)
+        {
+            UnPauseGame();
+        }
     }
 
-    public void Gameplay()
+    private void Gameplay()
     {
-        audioManager.PlayMusic(1);
+        if(prevState != GameState.Paused)
+        {
+            audioManager.PlayMusic(1);
+        }
+        if(prevState == GameState.Paused)
+        {
+            UnPauseGame();
+            uIManager.UnPause();
+        }
     }
 
-    public void Paused()
+    private void Paused()
     {
-        
+        PauseGame();
     }
 
-    public void GameEnd()
+    private void GameEnd()
     {
         
     }
@@ -137,11 +161,17 @@ public class SystemManager : MonoBehaviour
         operation.completed -= OperationCompleted;
     }
 
-     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if(gameState == GameState.Gameplay)
         {
             uIManager.ActivateHUD();
+        }
+        if(gameState == GameState.MainMenu)
+        {
+            uIManager.FetchUIElements();
+            uIManager.ResetMenu();
+            audioManager.PlayMusic(0);
         }
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
@@ -154,6 +184,18 @@ public class SystemManager : MonoBehaviour
         //Debug line to test quit function in editor
         //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
+    }
+    #endregion
+    #region Pause Functions
+    private void PauseGame()
+    {
+        Time.timeScale = 0;
+        uIManager.Pause();
+    }
+    private void UnPauseGame()
+    {
+        Time.timeScale = 1;
+        uIManager.UnPause();
     }
     #endregion
 }

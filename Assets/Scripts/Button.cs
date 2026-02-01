@@ -6,7 +6,7 @@ public class Button : MonoBehaviour
 {
     public UIManager uIManager;
     public AudioManager audioManager;
-    public enum ButtonType{play,start,quit,options,backToMenu,admit,reject}
+    public enum ButtonType{play,start,quit,options,backToMenu,menu,backFromOptions,resume,admit,reject}
     public ButtonType type;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -26,24 +26,36 @@ public class Button : MonoBehaviour
         switch(type)
         {
             case ButtonType.play:
-                uIManager.GoToHowToPlay();
                 audioManager.PlaySFX(1);
+                uIManager.GoToHowToPlay();
                 break;
             case ButtonType.start:
-                uIManager.StartGame();
                 audioManager.PlaySFX(1);
+                uIManager.StartGame();
                 break;
             case ButtonType.quit:
-                uIManager.systemManager.QuitGame();
                 audioManager.PlaySFX(1);
+                uIManager.systemManager.QuitGame();
                 break;
             case ButtonType.options:
-                uIManager.OptionsMenu();
                 audioManager.PlaySFX(1);
+                uIManager.OptionsMenu();
                 break;
             case ButtonType.backToMenu:
-                uIManager.HowToBackToMenu();
                 audioManager.PlaySFX(1);
+                uIManager.HowToBackToMenu();
+                break;
+            case ButtonType.backFromOptions:
+                audioManager.PlaySFX(1);
+                uIManager.BackFromOptions();
+                break;
+            case ButtonType.menu:
+                audioManager.PlaySFX(1);
+                uIManager.ReturnToMenu();
+                break;
+            case ButtonType.resume:
+                audioManager.PlaySFX(1);
+                uIManager.systemManager.ChangeGameState(SystemManager.GameState.Gameplay);
                 break;
             case ButtonType.admit:
                 break;
