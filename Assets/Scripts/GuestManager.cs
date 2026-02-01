@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
@@ -8,6 +9,7 @@ public class GuestManager : MonoBehaviour
 
     [Header("Guest Visual")]
     [SerializeField] private Transform guestVisual;
+    [SerializeField] private CanvasGroup canvasGroup;
     private float startPos;
     private float heightStep = 100;
 
@@ -36,6 +38,8 @@ public class GuestManager : MonoBehaviour
     private string armCategory = "arm";
     private string clothesCategory = "clothes";
 
+    private float fadeTime = 0.30f;
+
     private void Start()
     {
         startPos = guestVisual.localPosition.y;
@@ -43,13 +47,58 @@ public class GuestManager : MonoBehaviour
 
     public void GenerateNewGuest()
     {
+        StartCoroutine(GenerateGuest(true));
+    }
+
+    public void GenerateFirstGuest()
+    {
+        StartCoroutine(GenerateGuest(false));
+    }
+
+    private IEnumerator GenerateGuest(bool fadeOut)
+    {
+        float fadeTimer;
+
         //fade out
-        //play walking sound
+        if (fadeOut)
+        {
+            fadeTimer = fadeTime;
+
+            while (fadeTimer > 0)
+            {
+                yield return null;
+                fadeTimer -= Time.deltaTime;
+                SetVisualAlpha(fadeTimer / fadeTime);
+            }
+        }
 
         guest.GenerateGuest();
         SetGuestVisuals();
 
+        //sfx
+        SystemManager.systemManager.audioManager.PlaySFX(5);
+
         //fade in
+        fadeTimer = 0;
+
+        while (fadeTimer < fadeTime)
+        {
+            yield return null;
+            fadeTimer += Time.deltaTime;
+            SetVisualAlpha( fadeTimer / fadeTime );
+        }
+
+        SetVisualAlpha(1);
+
+    }
+
+    private void SetVisualAlpha(float alpha)
+    {
+        bodyRenderer.color = new Color(bodyRenderer.color.r, bodyRenderer.color.g, bodyRenderer.color.b, alpha);
+        maskRenderer.color = new Color(maskRenderer.color.r, maskRenderer.color.g, maskRenderer.color.b, alpha);
+        hairRenderer.color = new Color(hairRenderer.color.r, hairRenderer.color.g, hairRenderer.color.b, alpha);
+        armRenderer.color = new Color(armRenderer.color.r, armRenderer.color.g, armRenderer.color.b, alpha);
+        clothesRenderer.color = new Color(clothesRenderer.color.r, clothesRenderer.color.g, clothesRenderer.color.b, alpha);
     }
 
     private void SetGuestVisuals()

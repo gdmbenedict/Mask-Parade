@@ -407,6 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GuestManager
   guestVisual: {fileID: 583582745}
+  canvasGroup: {fileID: 583582746}
   bodyResolver: {fileID: 78925626}
   maskResolver: {fileID: 1928475999}
   hairResolver: {fileID: 1480645414}
@@ -647,6 +648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 583582745}
+  - component: {fileID: 583582746}
   m_Layer: 5
   m_Name: GuestVisual
   m_TagString: Untagged
@@ -678,6 +680,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 780, y: 1050}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &583582746
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583582744}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1196298129
 GameObject:
   m_ObjectHideFlags: 0
