@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     public GameObject howToUI;
     public GameObject optionsUI;
     public GameObject menuBG;
+    public GameObject resultsUI;
+    public Scores scores;
     [Header("Loading Screen UI Elements")]
     public GameObject loadingScreen;
     public CanvasGroup loadingScreenCanvasGroup;
@@ -137,7 +139,7 @@ public class UIManager : MonoBehaviour
         howToUI.SetActive(false); 
         optionsUI.SetActive(false);
         pauseMenu.SetActive(false);
-
+        resultsUI.SetActive(false);
     }
 
     #endregion
@@ -255,6 +257,16 @@ public class UIManager : MonoBehaviour
     public void SetRulesText(string newText)
     {
         rulesText.text = newText;
+    }
+    #endregion
+    #region Rersults Control
+    public void SetResultsScoreText(float score)
+    {
+        
+    }
+    public void SetHighScoreText(float score)
+    {
+        
     }
     #endregion
 }
