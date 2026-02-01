@@ -5173,7 +5173,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: High Score = 1000000
+  m_text: High Score = 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e1cd006f170c29408c934590eb32c5b, type: 2}
   m_sharedMaterial: {fileID: 5152304718125112626, guid: 1e1cd006f170c29408c934590eb32c5b, type: 2}
@@ -7558,7 +7558,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your score = 1000000
+  m_text: Your score = 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e1cd006f170c29408c934590eb32c5b, type: 2}
   m_sharedMaterial: {fileID: 5152304718125112626, guid: 1e1cd006f170c29408c934590eb32c5b, type: 2}

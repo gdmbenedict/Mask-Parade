@@ -317,16 +317,16 @@ public class UIManager : MonoBehaviour
         CloseAllUI();
         resultsUI.SetActive(true);
         SetResultsScoreText(runScore);
-        SetHighScoreText(scores.scores[0]);
     }
     public void SetResultsScoreText(float score)
     {
-        runScoreText.text = string.Format("Your score = {0}",score);
         scores.CheckHighSocres(score);
+        runScoreText.text = string.Format("Your score = {0}",score);
+        SetHighScoreText(scores.scores[0]);
     }
     public void SetHighScoreText(float score)
     {
-        runScoreText.text = string.Format("High score = {0}",score);
+        highScoreText.text = string.Format("High score = {0}",score);
     }
     #endregion
 }

@@ -18,6 +18,7 @@ public class Scores : ScriptableObject
                 break;
             }
         }
+        SortScores();
     }
     public void SortScores()
     {
