@@ -120,9 +120,10 @@ public class UIManager : MonoBehaviour
 
     public void StartGame()
     {
-        if(systemManager.gameState == SystemManager.GameState.GameEnd)
+        if(systemManager.gameState == SystemManager.GameState.Gameplay)
         {
             ResetStrikes();
+            SetHUDScore(0);
         }
         systemManager.LoadScene("Gameplay");
         systemManager.ChangeGameState(SystemManager.GameState.Gameplay);
