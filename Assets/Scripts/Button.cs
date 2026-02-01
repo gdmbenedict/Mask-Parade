@@ -6,6 +6,8 @@ public class Button : MonoBehaviour
 {
     public UIManager uIManager;
     public AudioManager audioManager;
+    public GameManager gameManager;
+
     public enum ButtonType{play,start,quit,options,backToMenu,menu,backFromOptions,resume,admit,reject}
     public ButtonType type;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,6 +20,14 @@ public class Button : MonoBehaviour
         if(audioManager == null)
         {
             audioManager = GameObject.FindAnyObjectByType<AudioManager>();
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (type == ButtonType.admit || type == ButtonType.reject)
+        {
+            gameManager = FindAnyObjectByType<GameManager>();
         }
     }
 
@@ -58,8 +68,12 @@ public class Button : MonoBehaviour
                 uIManager.systemManager.ChangeGameState(SystemManager.GameState.Gameplay);
                 break;
             case ButtonType.admit:
+                audioManager.PlaySFX(1);
+                gameManager.ProcessResult(true);
                 break;
             case ButtonType.reject:
+                audioManager.PlaySFX(1);
+                gameManager.ProcessResult(false);
                 break;
         }
     }

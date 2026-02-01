@@ -32,7 +32,9 @@ public class GameManager : MonoBehaviour
     {
         comboMult = startingComboMult;
         gameTimer = startingTime;
-        quickProcessTimer = startingTime;
+        quickProcessTimer = quickProcessTime;
+
+        StartGame();
     }
 
     // Update is called once per frame
@@ -44,19 +46,24 @@ public class GameManager : MonoBehaviour
         if (gameTimer > 0) gameTimer -= Time.deltaTime;
         else EndGame();
 
+        SystemManager.systemManager.uIManager.SetTimeRemaining(gameTimer);  
+
         if (quickProcessTimer > 0) quickProcessTimer -= Time.deltaTime;
         else if (quickProcessTimer < 0) quickProcessTimer = 0;
     }
 
     public void StartGame()
     {
+        SystemManager.systemManager.uIManager.ResetStrikes();
         guestManager.GenerateNewGuest();
         gameStarted = true;
     }
 
     public void EndGame()
     {
-        
+        gameStarted = false;
+
+        SystemManager.systemManager.uIManager.GetResults(score);
     }
 
     public void ProcessResult(bool letGuestIn)
@@ -79,6 +86,8 @@ public class GameManager : MonoBehaviour
         int bonusPoints = (int)(100 * (quickProcessTimer / quickProcessTime));
         score += (int)((basePoints + bonusPoints) * comboMult);
 
+        SystemManager.systemManager.uIManager.SetHUDScore(score);
+
         comboMult += comboStep;
         quickProcessTimer = quickProcessTime;
     }
@@ -86,6 +95,7 @@ public class GameManager : MonoBehaviour
     private void IncorrectChoice()
     {
         currentStrikes++;
+        SystemManager.systemManager.uIManager.SetStrikes(currentStrikes);
 
         if (currentStrikes >= maxStrikes) EndGame();
         else
