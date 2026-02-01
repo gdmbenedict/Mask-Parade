@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 232439195}
   - component: {fileID: 232439194}
   m_Layer: 5
-  m_Name: SoundCredits
+  m_Name: SoundAndFontCredits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -876,7 +876,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 320, y: 180}
+  m_AnchoredPosition: {x: 320, y: 300}
   m_SizeDelta: {x: 500, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232439194
@@ -917,6 +917,16 @@ MonoBehaviour:
     Ichijouji
 
     patchytherat
+
+
+    Font Credits:
+
+    Peter Wiegel
+
+    Magique
+    Fonts
+
+    Typographer Mediengestaltung
 
 '
   m_isRightToLeft: 0
