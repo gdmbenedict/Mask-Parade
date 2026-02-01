@@ -24,9 +24,14 @@ MonoBehaviour:
       m_SpriteOverride: {fileID: 21300000, guid: cd6f5e39ae9d3c64fa1bb22b675fd46c, type: 3}
     - m_Name: suit_medium
       m_Hash: 651238941
-      m_Sprite: {fileID: 21300000, guid: 2de90ef0190c7544db105d3d47566476, type: 3}
+      m_Sprite: {fileID: 21300000, guid: b3b785224a1d31744bce6993a1961ee2, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 21300000, guid: 2de90ef0190c7544db105d3d47566476, type: 3}
+      m_SpriteOverride: {fileID: 21300000, guid: b3b785224a1d31744bce6993a1961ee2, type: 3}
+    - m_Name: suit_small
+      m_Hash: 503068915
+      m_Sprite: {fileID: 21300000, guid: c6374bec4dbffa147956403abc3c34e2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: c6374bec4dbffa147956403abc3c34e2, type: 3}
     - m_Name: dress_large
       m_Hash: 839712092
       m_Sprite: {fileID: 21300000, guid: 244226dea9073d94b881e0a3bfdfbb78, type: 3}
@@ -37,8 +42,13 @@ MonoBehaviour:
       m_Sprite: {fileID: 21300000, guid: 726fc0affe54d3a4f8891f85a7a16549, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 21300000, guid: 726fc0affe54d3a4f8891f85a7a16549, type: 3}
+    - m_Name: dress_small
+      m_Hash: 505560817
+      m_Sprite: {fileID: 21300000, guid: 408781dfe13b3494186398d2d5a3d108, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 408781dfe13b3494186398d2d5a3d108, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 4
+    m_EntryOverrideCount: 6
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 639054708136267332
+  m_ModificationHash: 639055003136717021
   m_Version: 1

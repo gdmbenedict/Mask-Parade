@@ -47,10 +47,12 @@ public class Guest
     [System.Serializable]
     public enum MaskShape
     {
-        horns,
-        teeth,
-        ears,
-        beak
+        owl,
+        bunny,
+        cat,
+        fanged,
+        gilled,
+        horned
     }
 
     [System.Serializable]
@@ -76,9 +78,12 @@ public class Guest
     [System.Serializable]
     public enum HairStyle
     {
-        updoo,
-        shortHair,
-        longHair
+        bob,
+        braided,
+        flowing,
+        coiffed,
+        updo,
+        hatted
     }
 
     [System.Serializable]

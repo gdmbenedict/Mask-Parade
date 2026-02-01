@@ -17,13 +17,23 @@ MonoBehaviour:
     m_Hash: 485974297
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: long
-      m_Hash: 999795048
+    - m_Name: bob
+      m_Hash: 902541632
+      m_Sprite: {fileID: 21300000, guid: 66a562479b36cdf4abf90fe9630236d1, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 66a562479b36cdf4abf90fe9630236d1, type: 3}
+    - m_Name: braided
+      m_Hash: 945328467
+      m_Sprite: {fileID: 21300000, guid: 39d180556c575e24e98fb29d88c99226, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 39d180556c575e24e98fb29d88c99226, type: 3}
+    - m_Name: flowing
+      m_Hash: 135811908
       m_Sprite: {fileID: 21300000, guid: 0164ded15dd9eba4fb32233f6427588c, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 21300000, guid: 0164ded15dd9eba4fb32233f6427588c, type: 3}
-    - m_Name: short
-      m_Hash: 254316706
+    - m_Name: coiffed
+      m_Hash: 183501915
       m_Sprite: {fileID: 21300000, guid: f1b6cf933d4fd274a9b6ecbf785d5bfb, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 21300000, guid: f1b6cf933d4fd274a9b6ecbf785d5bfb, type: 3}
@@ -32,8 +42,13 @@ MonoBehaviour:
       m_Sprite: {fileID: 21300000, guid: a5b990e132303224c83ba96196385a92, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 21300000, guid: a5b990e132303224c83ba96196385a92, type: 3}
+    - m_Name: hatted
+      m_Hash: 348635021
+      m_Sprite: {fileID: 21300000, guid: 1c371de5fd275be409c72401eb49c6da, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 1c371de5fd275be409c72401eb49c6da, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 3
+    m_EntryOverrideCount: 6
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 639054598273167681
+  m_ModificationHash: 639055003982277486
   m_Version: 1

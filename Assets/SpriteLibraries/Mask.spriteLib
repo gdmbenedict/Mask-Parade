@@ -17,8 +17,8 @@ MonoBehaviour:
     m_Hash: 1064289072
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: beak
-      m_Hash: 418450281
+    - m_Name: owl
+      m_Hash: 414226253
       m_Sprite: {fileID: 21300000, guid: c4ecb076e96c3b24596c49c838c4332b, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 21300000, guid: c4ecb076e96c3b24596c49c838c4332b, type: 3}
@@ -27,18 +27,28 @@ MonoBehaviour:
       m_Sprite: {fileID: 21300000, guid: 398f224eb2365b44994be18e0fb22137, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 21300000, guid: 398f224eb2365b44994be18e0fb22137, type: 3}
-    - m_Name: fang
-      m_Hash: 515138566
+    - m_Name: fanged
+      m_Hash: 252277807
       m_Sprite: {fileID: 21300000, guid: a9bc32251fda4a64dabbfa90a6742ade, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 21300000, guid: a9bc32251fda4a64dabbfa90a6742ade, type: 3}
-    - m_Name: horn
-      m_Hash: 727636934
+    - m_Name: horned
+      m_Hash: 523073686
       m_Sprite: {fileID: 21300000, guid: df87b9d6e77c85e4db8c4a77bb3ea5ee, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 21300000, guid: df87b9d6e77c85e4db8c4a77bb3ea5ee, type: 3}
+    - m_Name: bunny
+      m_Hash: 702540293
+      m_Sprite: {fileID: 21300000, guid: 31544e1fe66e6314dadf6d42c5b7dd2f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 31544e1fe66e6314dadf6d42c5b7dd2f, type: 3}
+    - m_Name: gilled
+      m_Hash: 309971745
+      m_Sprite: {fileID: 21300000, guid: 7526575e2d9c0284da07b887efe809f0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 7526575e2d9c0284da07b887efe809f0, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 4
+    m_EntryOverrideCount: 6
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 639054596424103037
+  m_ModificationHash: 639055004522078291
   m_Version: 1
