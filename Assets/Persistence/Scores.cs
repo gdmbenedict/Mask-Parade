@@ -9,6 +9,7 @@ public class Scores : ScriptableObject
 
     public void CheckHighSocres(float newScore)
     {
+        SortScores();
         for(int i =0; i < scores.Count; i++)
         {
             if(newScore > scores[i])
@@ -17,5 +18,10 @@ public class Scores : ScriptableObject
                 break;
             }
         }
+    }
+    public void SortScores()
+    {
+        scores.Sort();
+        scores.Reverse();
     }
 }

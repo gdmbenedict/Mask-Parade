@@ -34,6 +34,11 @@ public class UIManager : MonoBehaviour
     public GameObject hud;
     public GameObject pauseMenu;
     public TextMeshProUGUI rulesText;
+    public TextMeshProUGUI timeRemaining;
+    public List<GameObject> stikeObjects;
+    [Header("Results Menu UI Elements")]
+    public TextMeshProUGUI runScoreText;
+    public TextMeshProUGUI highScoreText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     #region Unity Core
     void Start()
@@ -114,9 +119,12 @@ public class UIManager : MonoBehaviour
 
     public void StartGame()
     {
+        if(systemManager.gameState == SystemManager.GameState.GameEnd)
+        {
+            ResetStrikes();
+        }
         systemManager.LoadScene("Gameplay");
         systemManager.ChangeGameState(SystemManager.GameState.Gameplay);
-
     }
 
     public void ResetMenu()
@@ -253,20 +261,66 @@ public class UIManager : MonoBehaviour
         hud.SetActive(true);
         pauseMenu.SetActive(false);
     }
-
+    /// <summary>
+    /// Sets the text for the clipboard. 
+    /// </summary>
+    /// <param name="newText"></param>
     public void SetRulesText(string newText)
     {
         rulesText.text = newText;
     }
+
+    /// <summary>
+    /// Sets the time on the hud, hand it number in seconds. 
+    /// </summary>
+    /// <param name="time"></param>
+    public void SetTimeRemaining(float time)
+    {
+        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
+        timeRemaining.text = string.Format("{0}:{1:00}",timeSpan.Minutes,timeSpan.Seconds);
+    }
+    /// <summary>
+    /// Sets the active stikes on the HUD
+    /// </summary>
+    /// <param name="strikes"></param>
+    public void SetStrikes(int strikes)
+    {
+        for(int i = 0; i < strikes; i++)
+        {
+            stikeObjects[i].SetActive(true);
+        }
+    }
+    /// <summary>
+    /// Resets the strikes for when people try again. 
+    /// </summary>
+    private void ResetStrikes()
+    {
+        for(int i = 0; i < stikeObjects.Count; i++)
+        {
+            stikeObjects[i].SetActive(false);
+        }
+    }
     #endregion
     #region Rersults Control
-    public void SetResultsScoreText(float score)
+    /// <summary>
+    /// Takes in the score for the run, and sets up the results ui acordingly. 
+    /// </summary>
+    /// <param name="runScore"></param>
+    public void GetResults(float runScore)
     {
-        
+        CloseAllUI();
+        resultsUI.SetActive(true);
+        SetResultsScoreText(runScore);
+        SetHighScoreText(scores.scores[0]);
     }
-    public void SetHighScoreText(float score)
+    private void SetResultsScoreText(float score)
     {
-        
+        runScoreText.text = string.Format("Your score = {0}",score);
+        scores.CheckHighSocres(score);
+    }
+    private void SetHighScoreText(float score)
+    {
+        runScoreText.text = string.Format("High score = {0}",score);
     }
     #endregion
 }
