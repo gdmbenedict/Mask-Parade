@@ -3483,7 +3483,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 000000000
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e1cd006f170c29408c934590eb32c5b, type: 2}
   m_sharedMaterial: {fileID: 5152304718125112626, guid: 1e1cd006f170c29408c934590eb32c5b, type: 2}
@@ -4127,6 +4127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fba48614fb02f04ea0e1b67d642580f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Clipboard
+  audioManager: {fileID: 950938728}
   boardState: 1
   closedPos: -250
   openPos: 500

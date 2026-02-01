@@ -4,6 +4,7 @@ using UnityEngine.Rendering;
 
 public class Clipboard : MonoBehaviour
 {
+    public AudioManager audioManager;
     public enum BoardState{open,closed}
     public BoardState boardState;
     private RectTransform selfTransform;
@@ -30,5 +31,6 @@ public class Clipboard : MonoBehaviour
             selfTransform.DOMoveY(closedPos,moveTime);
             boardState = BoardState.closed;
         }
+        audioManager.PlaySFX(4);
     }
 }
