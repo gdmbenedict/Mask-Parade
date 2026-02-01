@@ -26,12 +26,17 @@ public class UIManager : MonoBehaviour
     public Slider masterVolSlider;
     public Slider musicVolSlider;
     public Slider sFXVolSlider;
+    [Header("HUD Menu UI Elements")]
+    public GameObject hudObject;
+    public GameObject rulesClipbaord;
+    public TextMeshProUGUI rulesText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     #region Unity Core
     void Start()
     {
         FetchUIElements();
         GetStartingVolume();
+        ResetMenu();
     }
     #endregion
     #region UI Control
@@ -91,6 +96,7 @@ public class UIManager : MonoBehaviour
 
     public void ResetMenu()
     {
+        hudObject.SetActive(false);
         menuUI.SetActive(true);
         howToUI.SetActive(false); 
         optionsUI.SetActive(false);
@@ -191,6 +197,12 @@ public class UIManager : MonoBehaviour
         audioManager.UpdateVoluem(masterVolSlider.value,"MasterVol");
         audioManager.UpdateVoluem(musicVolSlider.value,"MusicVol");
         audioManager.UpdateVoluem(sFXVolSlider.value,"SFXVol");
+    }
+    #endregion
+    #region HUD Control
+    public void ActivateHUD()
+    {
+        hudObject.SetActive(true);
     }
     #endregion
 }

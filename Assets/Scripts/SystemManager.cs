@@ -93,6 +93,7 @@ public class SystemManager : MonoBehaviour
     /// <param name="sceneName"></param>
     public void LoadScene(string sceneName)
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
         uIManager.UILoadingScreen();
         StartCoroutine(WaitForScreenLoad(sceneName));   
     }
@@ -134,6 +135,15 @@ public class SystemManager : MonoBehaviour
     {
         scenesToLoad.Remove(operation);
         operation.completed -= OperationCompleted;
+    }
+
+     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(gameState == GameState.Gameplay)
+        {
+            uIManager.ActivateHUD();
+        }
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     /// <summary>
