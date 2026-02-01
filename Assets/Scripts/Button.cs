@@ -68,11 +68,9 @@ public class Button : MonoBehaviour
                 uIManager.systemManager.ChangeGameState(SystemManager.GameState.Gameplay);
                 break;
             case ButtonType.admit:
-                audioManager.PlaySFX(1);
                 gameManager.ProcessResult(true);
                 break;
             case ButtonType.reject:
-                audioManager.PlaySFX(1);
                 gameManager.ProcessResult(false);
                 break;
         }

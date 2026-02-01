@@ -71,10 +71,12 @@ public class GameManager : MonoBehaviour
         if(letGuestIn != criteriaManager.CheckGuest())
         {
             IncorrectChoice();
+            SystemManager.systemManager.audioManager.PlaySFX(3);
         }
         else
         {
             CorrectChoice();
+            SystemManager.systemManager.audioManager.PlaySFX(2);
         }
 
         guestManager.GenerateNewGuest();
