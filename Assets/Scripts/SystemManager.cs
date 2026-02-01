@@ -10,7 +10,7 @@ public class SystemManager : MonoBehaviour
     public UIManager uIManager;
     public AudioManager audioManager;
     public static SystemManager systemManager;
-    public enum GameState{MainMenu, Gameplay, Options, Paused, GameEnd}
+    public enum GameState{MainMenu, Gameplay, Paused, GameEnd}
     [Header("Game States")]
     public GameState gameState;
     public GameState prevState;
@@ -51,10 +51,10 @@ public class SystemManager : MonoBehaviour
         switch(gameState)
         {
             case GameState.MainMenu:
+                MainMenu();
                 break;
             case GameState.Gameplay:
-                break;
-            case GameState.Options:
+                Gameplay();
                 break;
             case GameState.Paused:
                 break;
@@ -65,17 +65,14 @@ public class SystemManager : MonoBehaviour
 
     public void MainMenu()
     {
-        
+        uIManager.FetchUIElements();
+        uIManager.ResetMenu();
+        audioManager.PlayMusic(0);
     }
 
     public void Gameplay()
     {
-        
-    }
-
-    public void Options()
-    {
-        
+        audioManager.PlayMusic(1);
     }
 
     public void Paused()
@@ -96,6 +93,7 @@ public class SystemManager : MonoBehaviour
     /// <param name="sceneName"></param>
     public void LoadScene(string sceneName)
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
         uIManager.UILoadingScreen();
         StartCoroutine(WaitForScreenLoad(sceneName));   
     }
@@ -137,6 +135,15 @@ public class SystemManager : MonoBehaviour
     {
         scenesToLoad.Remove(operation);
         operation.completed -= OperationCompleted;
+    }
+
+     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(gameState == GameState.Gameplay)
+        {
+            uIManager.ActivateHUD();
+        }
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     /// <summary>
