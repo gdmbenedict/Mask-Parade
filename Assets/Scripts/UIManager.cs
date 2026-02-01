@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     public GameObject menuUI;
     public GameObject howToUI;
     public GameObject optionsUI;
+    public GameObject menuBG;
     [Header("Loading Screen UI Elements")]
     public GameObject loadingScreen;
     public CanvasGroup loadingScreenCanvasGroup;
@@ -75,7 +76,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void GoToHowToPlay()
     {
-        menuUI.SetActive(false);
+        CloseAllUI();
         howToUI.SetActive(true); 
     }
 
@@ -92,21 +93,30 @@ public class UIManager : MonoBehaviour
     {
         systemManager.LoadScene("Gameplay");
         systemManager.ChangeGameState(SystemManager.GameState.Gameplay);
+
     }
 
     public void ResetMenu()
     {
-        hudObject.SetActive(false);
+        CloseAllUI();
+        menuBG.SetActive(true);
         menuUI.SetActive(true);
-        howToUI.SetActive(false); 
-        optionsUI.SetActive(false);
     }
     public void OptionsMenu()
     {
         GetStartingVolume();
-        menuUI.SetActive(false);
+        CloseAllUI();
         optionsUI.SetActive(true);
     }
+
+    public void CloseAllUI()
+    {
+        hudObject.SetActive(false);
+        menuUI.SetActive(false);
+        howToUI.SetActive(false); 
+        optionsUI.SetActive(false);
+    }
+
     #endregion
     #region Loading Screen
     /// <summary>
@@ -202,7 +212,14 @@ public class UIManager : MonoBehaviour
     #region HUD Control
     public void ActivateHUD()
     {
+        CloseAllUI();
+        menuBG.SetActive(false);
         hudObject.SetActive(true);
+    }
+
+    public void SetRulesText(string newText)
+    {
+        rulesText.text = newText;
     }
     #endregion
 }
